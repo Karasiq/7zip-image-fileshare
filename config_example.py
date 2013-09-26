@@ -8,4 +8,4 @@ SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:123456@localhost/fileshare'
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
 CSRF_ENABLED = True
-SECRET_KEY = 'xXGk7mAQU8cbEztKApG6'
+SECRET_KEY = 'changeme'
