@@ -1,0 +1,10 @@
+db_repository/
+files/
+*.pyc
+db_create.py
+db_downgrade.py
+db_migrate.py
+db_upgrade.py
+.idea/
+*.iml
+7za.exe

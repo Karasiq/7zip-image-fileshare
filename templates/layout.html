@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang='ru'>
+<head>
+<meta charset='utf-8'>
+<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+<meta content='Бесплатный хостинг файлов без ожидания скачивания и капчи. Превью изображений, медиафайлов, документов и архивов. Dniwe ebanoe — быстрый и удобный файлообменник.' name='description'>
+<meta content='файлообменник, бесплатный файлообменник, хороший файлообменник, быстрый файлообменник, хостинг файлов, файловый хостинг, хранение файлов, обмен файлами, хостинг картинок, фотохостинг, видеохостинг, аудиохостинг, файловый обменник, разместить файл, разместить фото, просмотр файлов, превью' name='keywords'>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    {% if title %}
+    <title>{{title}} — ОП хуй</title>
+    {% else %}
+    <title>ОП хуй</title>
+    {% endif %}
+  </head>
+  <body>
+	<div class='wrapper'>
+	<header class='navbar'>
+	<div class='navbar-inner'>
+	<div class='container-fluid'>
+	<!--<a href="/" class="brand" title="FileShare">FileShare — файлообменник</a>-->
+	<a href="/" class="brand" title="FileShare">ОП хуй — Image+7z файлообменник</a>
+	<div class='pull-right nav-collapse'>
+	</div>
+	</div>
+	</div>
+	</header>
+	{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }} </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+	<div id="content" style="">
+	<!-- <div id="in_the_middle_of_page"> -->
+	<center>
+    {% block content %}{% endblock %}</div>
+	</center>
+	</div>
+	<!-- </div> -->
+	</div>
+  </body>
+</html>

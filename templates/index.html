@@ -1,0 +1,14 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+<hr>
+<form action="" method="post" name="login" enctype="multipart/form-data">
+    {{form.hidden_tag()}}
+	<table border="1">
+    <tr><td>Файл:</td><td>{{form.file}}</td></tr>
+	<tr><td>Изображение:</td><td>{{form.img}}</td></tr>
+	<tr><td>Пароль (не обязательно):</td><td>{{form.pwd(size=80)}}</td></tr>
+	</table>
+	<hr><input id="commit" class="btn upload" type="submit" value="Отправить" name="commit">
+</form>
+
+{% endblock %}
