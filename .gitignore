@@ -8,3 +8,4 @@ db_upgrade.py
 .idea/
 *.iml
 7za.exe
+config.py
