@@ -23,10 +23,6 @@ def sizeof_fmt(num):
         num /= 1024.0
     return "%3.1f %s" % (num, 'TB')
 
-@app.route('/favicon.ico')
-def favicon():
-	return send_from_directory('static', 'favicon.ico')
-
 @app.route('/', methods = ['GET', 'POST'])
 def index():
     import tempfile
