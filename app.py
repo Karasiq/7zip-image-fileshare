@@ -61,7 +61,7 @@ def index():
 def showfile(fid, fkey):
     entry = File.query.filter_by(id=fid).first()
     if entry is None or entry.filekey != fkey:
-        return render_template("error.html", errortitle = utf8str("Файл не найден"))
+        return render_template("error.html", errortitle = u"Файл не найден")
     fsize = os.path.getsize(entry.filepath)
     return render_template("showfile.html", file = entry, fileurl = '/img/' + fid + '/' + fkey, filesize = sizeof_fmt(fsize), showimg = (fsize <= 2 * 1024 * 1024))
 	
@@ -71,4 +71,4 @@ def loadfile(fid, fkey):
     if entry.filekey == fkey:
         return send_file(entry.filepath.encode('utf-8'))
     else:
-        return render_template("error.html", errortitle = utf8str("Файл не найден"))
+        return render_template("error.html", errortitle = u"Файл не найден")
