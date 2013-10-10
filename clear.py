@@ -9,8 +9,7 @@ def clean():
 	i = 0
 	if old != None:
 		for e in old:
-			dir = os.path.join(app.config['UPLOADED_FILES_DEST'], e.filekey)
-			if os.path.exists(dir): shutil.rmtree(dir)
+			shutil.rmtree(os.path.join(app.config['UPLOADED_FILES_DEST'], e.filekey))
 			db.session.delete(e)
 			i = i + 1
 	db.session.commit()

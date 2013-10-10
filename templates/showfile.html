@@ -1,20 +1,12 @@
 ﻿{% extends "layout.html" %}
 {% block content %}
 <ul class=entries>
-<table cellpadding=3 border="1">
-<tr><td>Имя файла:</td><td>{{file.filename | safe}}</td></tr>
-<tr><td>Размер:</td><td>{{filesize}}</td></tr>
-<tr><td>Хранится до:</td><td>{{file.deletetime.date()}}</td></tr>
-</table>
+Файл: {{file.filename | safe}}<br>
+Размер: {{filesize}}<br>
+Хранится до: {{file.deletetime.date()}}<br>
+Загрузок: {{file.loads}}<br>
 <br>
 <!--<a href={{fileurl}}><button><h4>Скачать</h4></button></a>-->
 <a class="btn large download" title="Скачать {{file.filename | safe}}" rel="nofollow" href="{{fileurl}}">Скачать</a>
-<hr>
-{% if showimg %}
-<img src="{{fileurl}}" height=600>
-{% else %}
-Изображение слишком большое для отображения
-{% endif %}
-<hr>
 </ul>
 {% endblock %}
