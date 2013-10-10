@@ -1,2 +1,2 @@
-7zip-image-fileshare
+flask-simple-fileshare
 ====================
